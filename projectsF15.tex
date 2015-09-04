@@ -1,0 +1,64 @@
+\title{SCOREC Fall 2015 URP Projects}
+\author{
+        Daniel Zaide, Brian Granzow, Dan Ibanez \and Cameron Smith \\
+}
+\date{\today}
+
+\documentclass[12pt]{article}
+
+\begin{document}
+\maketitle
+
+\section{Automatic Differentiation} 
+As part of moving the vector/matrix math into its own component, and supporting
+work that Brian and I are doing (separate things), we would like to develop our
+own automatic differentiation system and integrate that with apf::Vector,
+apf::Matrix and so on. It could also be used to make it easier to add shape
+functions to APF. Brian would like to be the “mentor” for this student, this
+project is a good mix of math and C++ experience.
+
+\section{ParaView VTK} 
+This project involves augmenting the capabilities of our visualization file
+output code. We would like to switch from decimal number representations to
+binary-exact representations. We would also like to use compression algorithms
+on the data to reduce disk usage and improve write speeds. Finally, we would
+like to use a directory hierarchy to try to improve write speeds in parallel.
+
+\section{Parameter Studies}
+We are developing a new mesh adaptation code, which uses local operations to
+modify a mesh until the edges are the desired length and the elements
+(triangles for example) are the desired shape. These operations rely on some
+parameters like what the minimum acceptable quality is and so on. We would like
+to study the variation of both output quality and program runtime on those
+parameters, and in particular identify reasons why certain parameters make the
+program faster and/or more effective.
+
+\section{Porting Python to Modelica} 
+We are working with architecture (CASE, the center for architecture science and
+ecology) to model dynamic building facades (smart windows). We are currently
+modelling one of their systems using an in house python code. This will be
+converted into  component in Modelica, a popular tool for analysis of
+energy/building systems. This project involves interfacing our model with
+Modelica, or possibly working on a GUI or other tools to allow Architecture
+researchers/developers to use our models.
+
+\section{Performance Profiling}
+Define and implement convenient, low-overhead, portable mechanisms to measure
+and compute statistics of run time, memory consumption, and communication data.
+Performance data will be collected with identifying metadata such that human-
+and machine- readable output can be produced.  Development will require
+writing, debugging, and testing C/C++ data structures with functional
+interfaces (API).
+
+\section{GPU Graph Operations}
+The Department of Energy is increasingly building machines that have most of
+their computing power available in GPUs (link to Titan or something). This
+project involves working with Stalin on a GPU-capable version of a mesh adapt
+code. The special thing about this software is it is doing graph operations on
+the GPU, which traditionally is not a good fit but we think we have good
+algorithms for it. The project specifically involves developing the CUDA
+portion of a general-purpose shared memory parallelism system and doing
+performance tests on various GPUs, plus performance optimization as necessary.
+
+\end{document}
+This is never printed
