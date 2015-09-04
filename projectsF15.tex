@@ -6,10 +6,36 @@
 
 \documentclass[12pt]{article}
 \usepackage{url}
-
+\usepackage{graphicx}
 \begin{document}
 \maketitle
 
+Let's begin with a little bit about meshes. We can look at the world around us. Everything is made up of building blocks, from atoms and upward. If we were to look at their shapes, we have similar building blocks. We have points, curves, and surfaces, and volumes. We can simplify it even more. We can represent curves by straight lines, surfaces by triangles and quadrilaterals, volumes by tetrahedra and prisms. This representation is our mesh, as illustrated for a guitar in Figure \ref{fig:guitar}
+\begin{figure}
+\includegraphics[width=1.0\textwidth]{images/guitarCAD.png}\\\includegraphics[width=1.0\textwidth]{images/guitarMESH.png}
+\caption{Geometry (top) and Mesh (bottom) of a guitar.}
+\label{fig:guitar}
+\end{figure}
+While our application is for the simulation of physical phenomena, meshes are also commonly used for graphics applications, for example, to represent the geometry of objects in video games (resolution is loosely like number of triangles).
+
+For more info, a video (in French) by a former post-doc is up here \url{https://www.rocq.inria.fr/gamma/Frederic.Alauzet/}
+
+\section{Curved Meshes}
+Consider the geometry and initial mesh in Figure \ref{fig:initcurv}.
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{images/curvedgeom.png}
+\includegraphics[width=0.5\textwidth]{images/curved1.png}
+\caption{Geometry (left) and initial triangulation (right).}
+\label{fig:initcurv}
+\end{figure}
+We can improve our approximation of the geometry in two ways. We can use the conventional approach, and increase the number of trianges. We can also use curved triangles, representing the triangle by a spline or approximate surface (Figure \ref{fig:endcurv}.
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{images/uniform2.png}
+\includegraphics[width=0.5\textwidth]{images/curved3.png}
+\label{fig:endcurv}
+\caption{Improving by the approximation of the geometry with more triangles (left) and curved triangles (right).}
+\end{figure}
+This can reduce the number of triangles used to represent the geometry while improving the geometric approximation, reducing simulation time and improving solution accuracy. Unlike their linear counterparts, guaranteeing validity (no self intersections) is a challenge, and determining validity itself is a non-trivial process. As such, we have several ideas for quality checking and verification and understanding curved elements. This project is simple coding and a fair amount of math (splines, curved surfaces, etc) and is a mix of software, algorithms, and geometry. The goal would be to understand these methods and find the best method(s) for analyzing curved meshes. This could also lead to looking at using these estimates to improve mesh quality, and other aspects of curved meshing.
 \section{Automatic Differentiation} 
 As part of moving the vector/matrix math into its own component, and supporting
 work that Brian and I are doing (separate things), we would like to develop our
