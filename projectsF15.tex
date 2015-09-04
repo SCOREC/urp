@@ -5,6 +5,7 @@
 \date{\today}
 
 \documentclass[12pt]{article}
+\usepackage{url}
 
 \begin{document}
 \maketitle
@@ -17,12 +18,20 @@ apf::Matrix and so on. It could also be used to make it easier to add shape
 functions to APF. Brian would like to be the “mentor” for this student, this
 project is a good mix of math and C++ experience.
 
+\url{https://github.com/bgranzow/diff}
+
 \section{ParaView VTK} 
 This project involves augmenting the capabilities of our visualization file
 output code. We would like to switch from decimal number representations to
 binary-exact representations. We would also like to use compression algorithms
 on the data to reduce disk usage and improve write speeds. Finally, we would
 like to use a directory hierarchy to try to improve write speeds in parallel.
+
+\url{http://www.paraview.org/}
+
+\url{http://www.vtk.org/wp-content/uploads/2015/04/file-formats.pdf}
+
+\url{https://github.com/SCOREC/core/blob/master/apf/apfVtk.cc}
 
 \section{Parameter Studies}
 We are developing a new mesh adaptation code, which uses local operations to
@@ -32,6 +41,8 @@ parameters like what the minimum acceptable quality is and so on. We would like
 to study the variation of both output quality and program runtime on those
 parameters, and in particular identify reasons why certain parameters make the
 program faster and/or more effective.
+
+\url{https://github.com/ibaned/august}
 
 \section{Porting Python to Modelica} 
 We are working with architecture (CASE, the center for architecture science and
@@ -59,6 +70,10 @@ the GPU, which traditionally is not a good fit but we think we have good
 algorithms for it. The project specifically involves developing the CUDA
 portion of a general-purpose shared memory parallelism system and doing
 performance tests on various GPUs, plus performance optimization as necessary.
+
+\url{https://github.com/ibaned/flounder}
+
+\url{https://www.youtube.com/watch?v=vYA0f6R5KAI}
 
 \end{document}
 This is never printed
